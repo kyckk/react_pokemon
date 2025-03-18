@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import pokemonNavbar from './component/pokemonNavbar';
+import List from './pages/List';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    
-    <pokemonNavbar/>
-    <App />
+    <List />
   </React.StrictMode>
 );
 
