@@ -12,7 +12,7 @@ const PokeCard = ({ header, data = [], footer }) => {
           <div class="col mb-3">
             <div key={item.id} class="card h-100">
               <Card>
-                <Card.Img variant="top" src={abc} />
+                <Card.Img variant="top" style={{ height: '250px' }}src={abc} />
                 <Card.Body>
                   <Card.Title>{item.title}</Card.Title>
                   <Card.Text>{item.text}</Card.Text>
