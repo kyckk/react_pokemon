@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
-import abc from "../images/abc.png";
+// import abc from "../images/abc.png";
 import PokeMonModal from "./Modal";
 import RadarChartComponent from "./RadarChart";
 const PokeCard = ({ header, data = [], footer }) => {
@@ -8,15 +8,15 @@ const PokeCard = ({ header, data = [], footer }) => {
     <div>
       {header && <header>{header}</header>}
       <div class="row row-cols-1 row-cols-md-3 g-3">
-        {data.map((item) => (
+        {data.map((item,index) => (
         <div className="container">
           <div class="col mb-3">
-            <div key={item.id} class="card h-100">
+            <div key={index} class="card h-100">
               <Card>
-                <Card.Img variant="top" style={{ height: '250px' }}src={abc} />
+                <Card.Img variant="top" style={{ height: '250px' }}src={item.imgUrl} />
                 <Card.Body>
                   <Card.Title>{item.title}</Card.Title>
-                  <Card.Text>{item.text}</Card.Text>
+                  <Card.Text>{item.koreanName}</Card.Text>
                   <PokeMonModal/>
                 </Card.Body>
               </Card>

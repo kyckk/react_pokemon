@@ -5,15 +5,20 @@ import PokemonApi from "../../api/PokemonApi";
 import React from "react";
 
 class List extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pokemonList: [],
+    };
+  }
   componentDidMount() {
     this.fetch();
   }
   async fetch() {
     try {
       const pokemonList = await PokemonApi.PokemonList();
-      const result = await PokemonApi.PokemonName();
-      console.log(pokemonList);
-      console.log(result);
+      this.setState({ pokemonList });
+      console.log(pokemonList.sprites.back_default);
     } catch (e) {
       console.error(e);
     }
@@ -22,14 +27,7 @@ class List extends React.Component {
     return (
       <Page header={<PokemonNavbar />}>
         <Card
-          data={[
-            { id: "1", title: "주문일시", text: "하이이" },
-            { id: "2", title: "주문번호", text: "하ㅏ이" },
-            { id: "3", title: "주문일시", text: "하이이" },
-            { id: "4", title: "주문번호", text: "하ㅏ이" },
-            { id: "5", title: "주문일시", text: "하이이" },
-            { id: "6", title: "주문번호", text: "하ㅏ이" },
-          ]}
+          data={this.state.pokemonList}
         ></Card>
       </Page>
     );
