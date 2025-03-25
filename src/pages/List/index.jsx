@@ -1,6 +1,6 @@
-import Card from "../../component/PokeCard";
+import PokeCard from "../../component/PokeCard";
 import Page from "../../component/Page";
-import PokemonNavbar from "./pokemonNavbar";
+import PokemonNavbar from "../../component/pokemonNavbar";
 import PokemonApi from "../../api/PokemonApi";
 import React from "react";
 
@@ -26,9 +26,9 @@ class List extends React.Component {
   render() {
     return (
       <Page header={<PokemonNavbar />}>
-        <Card
+        <PokeCard
           data={this.state.pokemonList}
-        ></Card>
+        ></PokeCard>
       </Page>
     );
   }

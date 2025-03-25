@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import List from './pages/List';
-
+// import List from './pages/List';
+import Detail from './pages/detail';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <List />
+    <Detail/>
   </React.StrictMode>
 );
 

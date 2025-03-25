@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 // import abc from "../images/abc.png";
 import PokeMonModal from "./Modal";
 import RadarChartComponent from "./RadarChart";
-const PokeCard = ({ header, data = [], footer }) => {
+const PokeCard = ({ header, data = [], footer ,radar}) => {
   return (
     <div>
       {header && <header>{header}</header>}
@@ -27,7 +27,8 @@ const PokeCard = ({ header, data = [], footer }) => {
       </div>
      
       {footer && <footer>{footer}</footer>}
-      <RadarChartComponent />
+      {radar&& <RadarChartComponent />}
+     
     </div>
     
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Radar } from 'react-chartjs-2';
 import { Chart as ChartJS, RadialLinearScale, Tooltip, Legend, ArcElement, Filler, CategoryScale, Title, LinearScale ,PointElement,LineElement} from 'chart.js';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 // Chart.js에서 필요한 모듈들을 등록합니다.
 ChartJS.register(
   RadialLinearScale, 
@@ -19,7 +19,7 @@ ChartJS.register(
 const RadarChartComponent = () => {
   // Radar 차트 데이터 설정
   const data = {
-    labels: ['A', 'B', 'C', 'D', 'E'], // 레이블
+    labels: ['타입', '능력', '이동', '높이', '무게게'], // 레이블
     datasets: [
       {
         label: 'Dataset 1', // 데이터셋 이름
@@ -49,8 +49,8 @@ const RadarChartComponent = () => {
   };
 
   return (
-    <div>
-      <h2>Radar Chart Example</h2>
+    <div className=''>
+      <h2 >Radar Chart Example</h2>
       <Radar key={JSON.stringify(data)}  data={data} options={options} />
     </div>
   );

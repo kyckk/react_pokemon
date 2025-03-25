@@ -5,7 +5,8 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import  {Image}  from 'react-bootstrap';
-import pokemonlogo from '../../images/pokemonlogo.png'
+import "bootstrap/dist/css/bootstrap.min.css";
+import pokemonlogo from '../images/pokemonlogo.png'
 const pokemonNavbar = () =>{
     return(
       <Navbar className="bg-body-#dc3545 justify-content-between mb-4  bg-primary 

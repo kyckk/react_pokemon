@@ -2,41 +2,26 @@
 
  const PokemonList = async() => {
   const allPokemonData = [];
+  let result;
   for (let i = 1; i <= 20; i++) {
-    await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then((res) =>
-      res.json()
-    ).then((result)=>(
-      // console.log(result.types.map((el)=>el.type.name)),
-      // console.log(result.abilities.map((el)=>el.ability.name)),
-      // console.log(result.moves.map((el)=>el.move.name)),
-      // console.log(result.height),
-      // console.log(result.weight),
-      allPokemonData.push({
-        imgUrl:result.sprites.back_default,
-        type:result.types.map((el)=>el.type.name),
-        ability:result.abilities.map((el)=>el.ability.name),
-        move:result.moves.map((el)=>el.move.name),
-        height:result.height,
-        weight:result.weight
-      })
-    )
-    
-    )
+    result=await Pokemon1(i)
+     allPokemonData.push({
+      imgUrl:result.sprites.back_default,
+      type:result.types.map((el)=>el.type.name),
+      ability:result.abilities.map((el)=>el.ability.name),
+      move:result.moves.map((el)=>el.move.name),
+      height:result.height,
+      weight:result.weight,
+      name:result.species.name
+    })
+    result=await Pokemon2(i)
     // debugger;
-    await fetch(`https://pokeapi.co/api/v2/pokemon-species/${i}`).then((res) =>
-      res.json()
-    ).then(
-      (result) =>
-        ( allPokemonData[i-1]={...allPokemonData[i-1],koreanName:result.names.find(
-          (nameObj) => nameObj.language.name === "ko"
-        ).name}
-          
-          )
-    );
-    
+        allPokemonData[i-1]={...allPokemonData[i-1],koreanName:result.names.find(
+        (nameObj) => nameObj.language.name === "ko"
+      ).name}
+    // console.log(result)
  }
    console.log(allPokemonData)
-   getEvolutionChain("pikachu");
   return allPokemonData;
 };
 
@@ -51,7 +36,7 @@ const PokemonName = () => {
         ).name)
     );
   console.log(result2);
-
+   
   return result;
 };
 async function getEvolutionChain(pokemonName) {
@@ -85,10 +70,38 @@ async function getEvolutionChain(pokemonName) {
       console.error("에러 발생:", error);
   }
 }
+async function Pokemon1(i){
+ return await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then((res) =>
+    res.json()
+  ).then((result)=>(
+    result
+  )
+  );
+}
+async function Pokemon2(i){
+  return await fetch(`https://pokeapi.co/api/v2/pokemon-species/${i}`).then((res) =>
+    res.json()
+  ).then(
+    (result) =>(result)
+  );
+}
+const createArray=async () =>{
+  const getEvolutionChainArray = await getEvolutionChain("pikachu");
 
+  return await Promise.all(
+    getEvolutionChainArray.map(async (element) => {
+      const result = await Pokemon1(element);
+      return {
+        imgUrl: result.sprites.back_default,
+        name: result.species.name
+      };
+    })
+  );
+}
 const PokemonApi = {
   PokemonList,
   PokemonName,
+  createArray
 };
 
 
