@@ -33,15 +33,12 @@ class Detail extends React.Component {
           className="row justify-content-center align-items-center"
           style={{ maxHeight: "1000px" }}
         >
-          <div class=" col-md-6 ">
+          <div class="col-lg-4">
             <PokemonSelect />
           </div>
-          <div class=" col-md-6 ">
+          <div class="col-lg-4">
             <RadarChartComponent />
           </div>
-  
-          {/* <PokemonSelect/>
-              < RadarChartComponent/> */}
         </div>
         <div>
           <PokeCard

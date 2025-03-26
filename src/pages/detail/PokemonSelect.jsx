@@ -4,7 +4,7 @@ import { Image } from "react-bootstrap";
 import abc from "../../images/abc.png"
 
 const PokemonSelect = () => {
-  return ( <Image class="w-100 h-100" src={abc}/>)
+  return ( <Image className="w-50 h-50" src={abc}/>)
   ;
 };
 export default  PokemonSelect;
