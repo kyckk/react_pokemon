@@ -1,0 +1,31 @@
+.gnb > li {
+    position: relative;
+    display: inline-block;
+    border-left: 1px solid #ebebeb;
+    z-index: 1;
+}
+
+.gnb>li>a {
+    position: relative;
+    display: flex
+;
+    height: 120px;
+    width: 120px;
+    padding-top: 30px;
+    margin-right: -4px;
+    border-right: 1px solid #ebebeb;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    transition: .5s;
+    -ms-flex-align: center;
+}
+#horizontal-underline{
+    position: absolute;
+    width: 100%;
+    background-color: pink;
+    top: 60px;
+    left: 50px;
+    height: 1px;
+}
