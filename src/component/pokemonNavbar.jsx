@@ -8,7 +8,28 @@ import { Image } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import pokemonlogo from '../images/pokemonlogo.png';
 import '../static/Nav.css';
-const pokemonNavbar = () => {
+import React, { useState, useEffect, useRef } from "react";
+const PokemonNavbar = () => {
+  const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    // 페이지 로드 시 첫 번째 요소 밑줄 위치 설정
+    const firstItem = navRef.current?.querySelector("li a");
+    if (firstItem) {
+      updateUnderline(firstItem);
+    }
+  }, []);
+
+  const updateUnderline = (element) => {
+    console.log("element.offsetWidth",element.offsetLeft,element.offsetHeight)
+    setUnderlineStyle({
+      left: element.offsetLeft,
+      width: element.offsetWidth,
+      
+    });
+  };
+
   return (
 
     <Navbar className="bg-body-#dc3545 justify-content-between mb-4   
@@ -18,31 +39,29 @@ const pokemonNavbar = () => {
         <Image src={pokemonlogo} className='h-100' ></Image>
       </Form>
       <div className='container flex-justify-space h-100'>
-      <nav id="gnb"  className="">
-				<ul className="gnb">
-          <div id='horizontal-underline'> 
-   
-          </div>
-					<li class="">
-						<a href="/news" class="warning "><i class="icon-news"></i>소식</a>
-					</li>
-					<li class="">
-						<a href="/game" class="primary "><i class="icon-game"></i>게임</a>
-					</li>
-					<li class="">
-						<a href="https://pokemoncard.co.kr/"class="secondary"><i class="icon-card"></i>카드 게임</a>
-					</li>
-					<li class="">
-						<a href="/animation" class="secondary2 "><i class="icon-ani"></i>애니메이션</a>
-					</li>
-					<li class="">
-						<a href="/goods" class="danger "><i class="icon-ball"></i>상품</a>
-					</li>
-				
+      <nav id="gnb" className="">
+      <ul className="gnb" ref={navRef}>
+        {/* 움직이는 밑줄 */}
+        <div id="horizontal-underline" style={underlineStyle}></div>
 
- 
-				</ul>
-			</nav>
+        {[
+          { href: "/news", className: "warning", icon: "icon-news", text: "소식" },
+          { href: "/game", className: "primary", icon: "icon-game", text: "게임" },
+          { href: "https://pokemoncard.co.kr/", className: "secondary", icon: "icon-card", text: "카드 게임" },
+          { href: "/animation", className: "secondary2", icon: "icon-ani", text: "애니메이션" },
+          { href: "/goods", className: "danger", icon: "icon-ball", text: "상품" },
+        ].map((item, index) => (
+          <li key={index}  onMouseEnter={(e) => updateUnderline(e.currentTarget)}>
+            <a
+              href={item.href}
+              className={item.className}           
+            >
+              <i className={item.icon}></i> {item.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
       </div>
       <Form inline>
         <Row>
@@ -62,4 +81,4 @@ const pokemonNavbar = () => {
   );
 
 }
-export default pokemonNavbar;
+export default PokemonNavbar;

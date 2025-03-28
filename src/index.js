@@ -4,12 +4,14 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 // import List from './pages/List';
 import Detail from './pages/detail';
+import Routing from './lib/Routing';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Detail/>
+    <Routing/>
   </React.StrictMode>
 );
 

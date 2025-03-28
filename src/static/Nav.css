@@ -1,8 +1,15 @@
+#gnb {
+    position: relative;  /* 기준점 설정 */
+}
+.gnb {
+    z-index: 2;
+}
 .gnb > li {
+    
     position: relative;
     display: inline-block;
     border-left: 1px solid #ebebeb;
-    z-index: 1;
+    z-index: 2;
 }
 
 .gnb>li>a {
@@ -21,11 +28,16 @@
     transition: .5s;
     -ms-flex-align: center;
 }
-#horizontal-underline{
+#horizontal-underline {
     position: absolute;
-    width: 100%;
+    width: 0;  /* 초기에는 가로 길이 없음 */
     background-color: pink;
-    top: 60px;
-    left: 50px;
-    height: 1px;
+    top: 120px; /* 높이 조정 */
+    height: 3px; /* 두께 조정 */
+    left: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
 }
+
+
+
