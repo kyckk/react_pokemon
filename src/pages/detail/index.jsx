@@ -29,10 +29,13 @@ class Detail extends React.Component {
   render(){
     return (
       <Page header={<PokemonNavbar />}>
+        <div style={{ height: "10px",  background:"black"}}></div>
         <div
           className="row justify-content-center align-items-center"
           style={{ maxHeight: "1000px" }}
-        >
+        > 
+         
+          
           <div class="col-lg-4">
             <PokemonSelect />
           </div>

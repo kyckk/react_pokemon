@@ -50,7 +50,7 @@ const RadarChartComponent = () => {
 
   return (
     <div className=''>
-      <h2 >Radar Chart Example</h2>
+      {/* <h2 >Radar Chart Example</h2> */}
       <Radar key={JSON.stringify(data)}  data={data} options={options} />
     </div>
   );

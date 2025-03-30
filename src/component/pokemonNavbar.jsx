@@ -1,6 +1,6 @@
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 // import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -38,7 +38,7 @@ const PokemonNavbar = () => {
       <Form inline className='h-100'>
         <Image src={pokemonlogo} className='h-100' ></Image>
       </Form>
-      <div className='container flex-justify-space h-100'>
+      <div className='container  h-100'>
       <nav id="gnb" className="">
       <ul className="gnb" ref={navRef}>
         {/* 움직이는 밑줄 */}
@@ -72,9 +72,9 @@ const PokemonNavbar = () => {
               className=" mr-sm-2"
             />
           </Col>
-          <Col xs="auto">
+          {/* <Col xs="auto">
             <Button type="submit">Submit</Button>
-          </Col>
+          </Col> */}
         </Row>
       </Form>
     </Navbar>
