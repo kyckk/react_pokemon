@@ -1,43 +1,42 @@
 #gnb {
-    position: relative;  /* 기준점 설정 */
+  position: relative; /* 기준점 설정 */
 }
 .gnb {
-    z-index: 2;
+  z-index: 2;
 }
 .gnb > li {
-    
-    position: relative;
-    display: inline-block;
-    border-left: 1px solid #ebebeb;
-    z-index: 2;
+  position: relative;
+  display: inline-block;
+  border-left: 1px solid #ebebeb;
+  z-index: 2;
 }
 
-.gnb>li>a {
-    position: relative;
-    display: flex
-;
-    height: 120px;
-    width: 120px;
-    padding-top: 30px;
-    margin-right: -4px;
-    border-right: 1px solid #ebebeb;
-    background-color: #fff;
-    justify-content: center;
-    align-items: center;
-    font-weight: 500;
-    transition: .5s;
-    -ms-flex-align: center;
+.gnb > li > a {
+  position: relative;
+  display: flex;
+  height: 120px;
+  width: 120px;
+  padding-top: 30px;
+  margin-right: -4px;
+  border-right: 1px solid #ebebeb;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  transition: 0.5s;
+  -ms-flex-align: center;
 }
 #horizontal-underline {
-    position: absolute;
-    width: 0;  /* 초기에는 가로 길이 없음 */
-    background-color: pink;
-    top: 85px; /* 높이 조정 */
-    height: 3px; /* 두께 조정 */
-    left: 0;
-    transition: all 0.3s ease-in-out;
-    z-index: 1000; 
+  position: absolute;
+  width: 0; /* 초기에는 가로 길이 없음 */
+  background-color: pink;
+  top: 85px; /* 높이 조정 */
+  height: 3px; /* 두께 조정 */
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
 }
-
-
-
+ Nav  {
+    /* box-shadow: 0px 4px 15px 1px rgba(0, 0, 0, 0.3); */
+    
+} 
