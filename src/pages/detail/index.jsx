@@ -6,6 +6,7 @@ import PokemonSelect from "./PokemonSelect";
 import "bootstrap/dist/css/bootstrap.min.css"; // 부트스트랩 추가
 import PokemonApi from "../../api/PokemonApi";
 import PokeCard from "../../component/PokeCard";
+import "../../static/Main.css"
 
 class Detail extends React.Component {
   constructor(props) {
@@ -43,11 +44,14 @@ class Detail extends React.Component {
             <RadarChartComponent />
           </div>
         </div>
-        <div>
+        <div class="bg-light pt-3" >
+          <div>
           <PokeCard
             data={this.state.createArray}
           ></PokeCard>
+          </div>
         </div>
+
       </Page>
     );
 
