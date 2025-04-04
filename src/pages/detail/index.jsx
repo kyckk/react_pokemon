@@ -8,13 +8,18 @@ import PokemonApi from "../../api/PokemonApi";
 import PokeCard from "../../component/PokeCard";
 import "../../static/Main.css"
 
+
+
 class Detail extends React.Component {
+
   constructor(props) {
+    
     super(props);
     this.state = {
       createArray: [],
     };
   }
+  
   componentDidMount() {
     this.fetch();
   }
@@ -28,6 +33,7 @@ class Detail extends React.Component {
     }
   }
   render(){
+
     return (
       <Page header={<PokemonNavbar />}>
         <div style={{ height: "10px",  background:"black"}}></div>
@@ -44,7 +50,7 @@ class Detail extends React.Component {
             <RadarChartComponent />
           </div>
         </div>
-        <div class="bg-light pt-3" >
+        <div class="bgLight pt-3" >
           <div>
           <PokeCard
             data={this.state.createArray}

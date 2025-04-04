@@ -35,13 +35,13 @@ const PokemonNavbar = () => {
 
   return (
     <Navbar
-      className="bg-body-#dc3545 justify-content-between mb-4"
+      className="bg-body-#dc3545  justify-content-between mb-4"
       style={{ height: "120px", objectFit: "cover" }}
     >
       <Form inline className="h-100">
         <Image src={pokemonlogo} className="h-100"></Image>
       </Form>
-      <div className="container  h-100">
+      <div className="container flex-nowrap h-100">
         <nav id="gnb" className="">
           <ul className="gnb" ref={navRef}>
             {/* 움직이는 밑줄 */}

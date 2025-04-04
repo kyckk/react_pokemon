@@ -1,4 +1,9 @@
-.bg-light{
+.bgLight{
     padding: 30,0;
     background-color :#f7f7f7 !important;
+}
+.card_container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
