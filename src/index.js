@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-// import List from './pages/List';
-import Detail from './pages/detail';
 import Routing from './lib/Routing';
 
 
