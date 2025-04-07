@@ -7,9 +7,6 @@ import "bootstrap/dist/css/bootstrap.min.css"; // 부트스트랩 추가
 import PokemonApi from "../../api/PokemonApi";
 import PokeCard from "../../component/PokeCard";
 import "../../static/Main.css"
-import Dialog from "../../component/Dialog";
-import BackDrop from "../../component/BackDrop";
-
 class Detail extends React.Component {
 
   constructor(props) {
@@ -57,9 +54,6 @@ class Detail extends React.Component {
           ></PokeCard>
           </div>
         </div>
-        <BackDrop>
-          <Dialog />
-        </BackDrop>
         
       </Page>
       

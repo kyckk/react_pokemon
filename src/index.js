@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Routing from './lib/Routing';
-
+import * as MyLayout from "./lib/MyLayout";// 네임드 방식포함 export default  말고 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Routing/>
+    <MyLayout.Layout>
+      <Routing/>
+    </MyLayout.Layout>
   </React.StrictMode>
 );
 
