@@ -1,32 +1,24 @@
-import React from "react";
-import BackDrop from "../component/BackDrop"
-import Dialog from "../component/Dialog";
-export const layoutContext = React.createContext({});
-layoutContext.displayName = "LayoutContext";
+import React, { useState, createContext, useContext } from "react";
+import BackDrop from "../component/BackDrop";
 
-export class Layout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dialog: <Dialog/>,
-    };
-  }
 
-  render() {
-    const value = {
-      dialog: this.state.dialog,
-    };
-    return (
-      <layoutContext.Provider value={value}>
-        {this.props.children}
-      </layoutContext.Provider>
-    );
-  }
-}
+export const LayoutContext = createContext();
 
-export const DialogContainer = () => (
-  <layoutContext.Consumer>
-    {({ dialog }) => dialog && <BackDrop>{dialog}</BackDrop>}
-  </layoutContext.Consumer>
-);
+export const Layout = ({ children }) => {
+  const [dialog, setDialog] = useState(null);
+  const value = { dialog, setDialog };
+
+  return (
+    <LayoutContext.Provider value={value}>
+      {children}
+    </LayoutContext.Provider>
+  );
+};
+
+export const DialogContainer = () => {
+  const { dialog } = useContext(LayoutContext);
+
+  return dialog ? <BackDrop>{dialog}</BackDrop> : null;
+};
+
 
