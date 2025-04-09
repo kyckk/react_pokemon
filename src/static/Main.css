@@ -7,7 +7,10 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
+.container{
+  display: flex;
+  justify-content: center;
+}
 .BackDrop {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
@@ -30,6 +33,7 @@
     position: relative;
     width: 300px;
     z-index: 1100;
+    height: 100%;
   }
   .Dialog > header {
     font-size: 1.3rem;

@@ -1,13 +1,12 @@
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
-// import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button';
 // import InputGroup from 'react-bootstrap/InputGroup';
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import { Image } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import pokemonlogo from "../images/pokemonlogo.png";
 import "../static/Nav.css";
+import "../static/Main.css"
 import React, { useState, useEffect, useRef } from "react";
 const PokemonNavbar = () => {
   const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
@@ -92,18 +91,19 @@ const PokemonNavbar = () => {
         </nav>
       </div>
       <Form inline>
-        <Row>
-          <Col xs="auto">
+       <div className="container">
             <Form.Control
               type="text"
               placeholder="Search"
               className=" mr-sm-2"
             />
-          </Col>
-          {/* <Col xs="auto">
-            <Button type="submit">Submit</Button>
-          </Col> */}
-        </Row>
+          
+          
+            <Button>=</Button>
+       </div>
+           
+          
+       
       </Form>
     </Navbar>
   );

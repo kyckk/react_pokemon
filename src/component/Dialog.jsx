@@ -1,4 +1,5 @@
-const Dialog = ({children}) => (
+const Dialog = (
+{children}) => (
     <div className="Dialog">
       <header>header</header>
       <main>main</main>

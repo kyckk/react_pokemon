@@ -24,8 +24,13 @@ export const Layout = ({ children }) => {
 };
 
 export const DialogContainer = () => {
-  const { dialog } = useContext(LayoutContext);
-
-  return dialog ? <BackDrop>{dialog}</BackDrop> : null;
+  const { dialog,setDialog } = useContext(LayoutContext);
+  const handleBackdropClick = (event) => {
+    // 다이얼로그 외부를 클릭했을 때 다이얼로그를 닫음
+    if (event.target === event.currentTarget) {
+      setDialog(null)
+    }
+  };
+  return dialog ? <BackDrop  onClick={handleBackdropClick}>{dialog}</BackDrop> : null;
 };
 
