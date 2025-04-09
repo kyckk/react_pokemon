@@ -1,19 +1,13 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { useState, createContext, useContext } from "react";
 import BackDrop from "../component/BackDrop";
 
-// 컨텍스트 생성
-export const LayoutContext = createContext({});
-LayoutContext.displayName = "LayoutContext";
 
-// Layout 컴포넌트: 상태 관리 및 Context Provider 제공
+export const LayoutContext = createContext();
+
 export const Layout = ({ children }) => {
-  const [dialog, setDialog] = useState("");
-  console.log(children)
-  const value = {
-    dialog,
-    setDialog, // 필요 시 하위에서 dialog 업데이트 가능
-  };
- 
+  const [dialog, setDialog] = useState(null);
+  const value = { dialog, setDialog };
+
   return (
     <LayoutContext.Provider value={value}>
       {children}
@@ -26,6 +20,5 @@ export const DialogContainer = () => {
 
   return dialog ? <BackDrop>{dialog}</BackDrop> : null;
 };
-
 
 
