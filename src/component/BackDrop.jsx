@@ -1,6 +1,8 @@
-const BackDrop = ({ children, onClick }) => {
+const BackDrop = ({ value,children, onClick }) => {
+  console.log(value);
     return (
-      <div className="BackDrop" onClick={onClick}>
+      
+      <div className={`BackDrop ${value === "center" ? "" : "Side"}`} onClick={onClick}>
         {children}
       </div>
     );
