@@ -18,6 +18,7 @@ class List extends React.Component {
     try {
       const pokemonList = await PokemonApi.PokemonList();
       this.setState({ pokemonList });
+
       console.log(pokemonList.sprites.back_default);
     } catch (e) {
       console.error(e);
@@ -26,10 +27,12 @@ class List extends React.Component {
   render() {
     return (
       <Page header={<PokemonNavbar />}>
+       
         <PokeCard
           data={this.state.pokemonList}
         ></PokeCard>
       </Page>
+
     );
   }
 }
